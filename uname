@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Tool to fake the output in chroot to adjust the
+# used kernel version in different Makefiles.
+
+# prepare system by rehash uname from /bin/uname
+# to /tmp/uname: "hash -p /tmp/uname uname"
+
+
+
+## collection of different output options
+
+
+### -r ========================================================================
+
+#### return the latest installed kernel version
+
+#ls /boot/vmlinuz* | sed 's/\/boot\/vmlinuz-//' | sort -n | tail -n1
