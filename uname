@@ -6,13 +6,33 @@
 # prepare system by rehash uname from /bin/uname
 # to /tmp/uname: "hash -p /tmp/uname uname"
 
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
 
-## collection of different output options
+while getopts "asnrvmpio" opt; do
+	case "$opt" in
+	## collection of different output options
+		### -r ==================================================================
+		#### return the latest installed kernel version
+		r) ls /boot/vmlinuz* | sed 's/\/boot\/vmlinuz-//' | sort -n | tail -n1
+		#### …
+#		r) …
+		;;
 
+		### -v ==================================================================
+		#### …
+#		v) …
+#		;;
 
-### -r ========================================================================
+		### -m ==================================================================
+		#### return maschine arch of an arm hard floating platform
+		m) echo armhf
+		;;
 
-#### return the latest installed kernel version
-
-#ls /boot/vmlinuz* | sed 's/\/boot\/vmlinuz-//' | sort -n | tail -n1
+		# default: just use original to provide output
+		# currently only working with a single option on the command call
+		*) /bin/uname -$opt
+		;;
+	esac
+done

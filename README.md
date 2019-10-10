@@ -9,6 +9,7 @@ from /bin/uname to /tmp/uname with the following command:
 
 ## currently supported options
     -r, --kernel-release     Release‐Nummer des Kernels ausgeben
+    -m, --machine            print the machine hardware name
 
 ## missing options
     -a, --all                alle Informationen ausgeben, in der folgenden
@@ -16,7 +17,6 @@ from /bin/uname to /tmp/uname with the following command:
     -s, --kernel-name        Namen des Kernels ausgeben
     -n, --nodename           Netzwerknamen der Maschine ausgeben
     -v, --kernel-version     print the kernel version
-    -m, --machine            print the machine hardware name
     -p, --processor          print the processor type (non-portable)
     -i, --hardware-platform  print the hardware platform (non-portable)
     -o, --operating-system   print the operating system
