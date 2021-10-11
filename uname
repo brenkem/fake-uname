@@ -19,7 +19,7 @@ while getopts "asnrvmpio" opt; do
 	## collection of different output options
 		### -r ==================================================================
 		#### return the latest installed kernel version
-		r) ls /boot/vmlinuz* | sed 's/\/boot\/vmlinuz-//' | sort -n | tail -n1
+		r) ls /boot/vmlinuz* | sed 's/\/boot\/vmlinuz-//' | sort -V | tail -n1
 		#### …
 #		r) …
 		;;
